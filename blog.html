@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog de Derecho Previsional — Estudio Gonzalez y Asociados</title>
+<meta name="description" content="Artículos sobre jubilación, reajuste de haberes, pensiones e incapacidad, explicados en lenguaje simple.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="navbar wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>Estudio Gonzalez y Asociados</a>
+    <div class="menu-row">
+      <nav><ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="areas.html">Áreas de práctica</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul></nav>
+      <a class="nav-cta" href="contacto.html#calendario">Agendar consulta</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Blog</span>
+    <h1>Recursos para entender tus derechos</h1>
+    <p class="lead">Artículos claros, sin jerga legal innecesaria, para que sepas qué te corresponde y cómo reclamarlo.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="blog-grid">
+      <a href="blog-reajuste.html" class="blog-card reveal">
+        <div class="blog-img"><span class="blog-tag">Reajuste</span></div>
+        <div class="blog-content"><span class="blog-date">10 de julio, 2026</span><h3>Mi jubilación quedó desactualizada: cómo reclamar</h3><p>Pasos concretos para iniciar un reclamo por movilidad jubilatoria.</p><span class="blog-link">Leer más →</span></div>
+      </a>
+      <a href="#" class="blog-card reveal">
+        <div class="blog-img"><span class="blog-tag">Jubilación</span></div>
+        <div class="blog-content"><span class="blog-date">3 de julio, 2026</span><h3>¿Cuántos años de aporte necesito para jubilarme?</h3><p>Requisitos actualizados y qué hacer si te faltan años de aporte.</p><span class="blog-link">Leer más →</span></div>
+      </a>
+      <a href="#" class="blog-card reveal">
+        <div class="blog-img"><span class="blog-tag">Pensión</span></div>
+        <div class="blog-content"><span class="blog-date">28 de junio, 2026</span><h3>Pensión por viudez: requisitos y documentación</h3><p>Qué necesitás presentar y cuánto tarda en resolverse el trámite.</p><span class="blog-link">Leer más →</span></div>
+      </a>
+      <a href="#" class="blog-card reveal">
+        <div class="blog-img"><span class="blog-tag">Incapacidad</span></div>
+        <div class="blog-content"><span class="blog-date">20 de junio, 2026</span><h3>Me rechazaron el retiro por invalidez: qué puedo hacer</h3><p>Opciones para impugnar un dictamen desfavorable.</p><span class="blog-link">Leer más →</span></div>
+      </a>
+      <a href="#" class="blog-card reveal">
+        <div class="blog-img"><span class="blog-tag">Trámites</span></div>
+        <div class="blog-content"><span class="blog-date">12 de junio, 2026</span><h3>Documentación básica para iniciar cualquier trámite previsional</h3><p>Una checklist simple para llegar preparado a tu consulta.</p><span class="blog-link">Leer más →</span></div>
+      </a>
+      <a href="#" class="blog-card reveal">
+        <div class="blog-img"><span class="blog-tag">Jubilación</span></div>
+        <div class="blog-content"><span class="blog-date">5 de junio, 2026</span><h3>Diferencias entre jubilación ordinaria y por invalidez</h3><p>Cuál corresponde según tu situación de salud y de aportes.</p><span class="blog-link">Leer más →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="brand">Estudio Gonzalez y Asociados</div><p>Estudio jurídico especializado en Derecho Previsional.</p><p>Matrícula N.º 12727 — Colegio de Abogados de Mendoza</p></div>
+      <div><h3>Contacto</h3><ul><li><a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener">📱 WhatsApp: +54 9 261 535-8230</a></li><li><a href="mailto:gonzalezyasociadoslegales@gmail.com">✉️ gonzalezyasociadoslegales@gmail.com</a></li></ul></div>
+      <div><h3>Navegación</h3><ul><li><a href="areas.html">Áreas de práctica</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Estudio Gonzalez y Asociados.</span><span>Sitio en construcción</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">📲</a>
+<script>
+const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show'); io.unobserve(e.target);}});}, {threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

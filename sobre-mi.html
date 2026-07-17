@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre Liliana Gonzalez — Abogada Previsional en Mendoza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .about-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:50px; align-items:start;}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
+  .photo-real{border-radius:var(--radius); aspect-ratio:4/5; object-fit:cover; width:100%; box-shadow:0 20px 44px rgba(30,46,51,0.14);}
+  .value-list{display:grid; gap:18px; margin-top:16px;}
+  .value-item{display:flex; gap:16px; align-items:flex-start;}
+  .value-ic{width:44px; height:44px; border-radius:12px; background:var(--sage-light); display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;}
+</style>
+</head>
+<body>
+<header>
+  <div class="navbar wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>Estudio Gonzalez y Asociados</a>
+    <div class="menu-row">
+      <nav><ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="areas.html">Áreas de práctica</a></li>
+        <li><a href="sobre-mi.html" aria-current="page">Sobre mí</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul></nav>
+      <a class="nav-cta" href="contacto.html#calendario">Agendar consulta</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Sobre mí</span>
+    <h1>Liliana Gonzalez — Abogada en Derecho Previsional</h1>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap about-grid">
+    <img class="photo-real reveal" src="img/liliana-gonzalez.jpeg" alt="Liliana Gonzalez, abogada en Derecho Previsional, Mendoza">
+    <div class="reveal">
+      <p style="font-size:18px; color:#33454a; margin-bottom:20px;">Soy Liliana Gonzalez, abogada matriculada en el Colegio de Abogados de Mendoza (Mat. N.º 12727), al frente de Estudio Gonzalez y Asociados. Decidí enfocar mi estudio en Derecho Previsional porque veo, todos los días, cuánta gente no reclama lo que le corresponde simplemente por no saber que puede hacerlo.</p>
+      <p style="font-size:18px; color:#33454a; margin-bottom:20px;">Aunque el estudio recién está empezando en esta especialidad en Mendoza, eso significa que cada consulta recibe atención personalizada — no sos un expediente más entre cientos.</p>
+
+      <h2 style="font-size:22px; margin-top:36px; margin-bottom:18px;">Cómo trabajamos</h2>
+      <div class="value-list">
+        <div class="value-item"><div class="value-ic">🔍</div><div><h3 style="font-size:17px;">Análisis honesto</h3><p style="font-size:15.5px; color:#55655f;">Si tu caso no tiene fundamento para reclamar, te lo decimos desde el principio.</p></div></div>
+        <div class="value-item"><div class="value-ic">🗣️</div><div><h3 style="font-size:17px;">Lenguaje claro</h3><p style="font-size:15.5px; color:#55655f;">Explicamos cada trámite sin jerga legal innecesaria.</p></div></div>
+        <div class="value-item"><div class="value-ic">📲</div><div><h3 style="font-size:17px;">Acompañamiento constante</h3><p style="font-size:15.5px; color:#55655f;">Te mantenemos informado del estado de tu expediente en cada etapa.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap" style="text-align:center;">
+    <h2>¿Charlamos sobre tu situación?</h2>
+    <p style="color:#4a5a5e; margin-bottom:28px;">La primera consulta es gratuita y sin compromiso.</p>
+    <a href="contacto.html#calendario" class="btn-primary">💬 Agendar consulta gratuita</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="brand">Estudio Gonzalez y Asociados</div><p>Estudio jurídico especializado en Derecho Previsional.</p><p>Matrícula N.º 12727 — Colegio de Abogados de Mendoza</p></div>
+      <div><h3>Contacto</h3><ul><li><a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener">📱 WhatsApp: +54 9 261 535-8230</a></li><li><a href="mailto:gonzalezyasociadoslegales@gmail.com">✉️ gonzalezyasociadoslegales@gmail.com</a></li></ul></div>
+      <div><h3>Navegación</h3><ul><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Estudio Gonzalez y Asociados.</span><span>Sitio en construcción</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">📲</a>
+<script>
+const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show'); io.unobserve(e.target);}});}, {threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

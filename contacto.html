@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Estudio Gonzalez y Asociados, Mendoza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="navbar wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>Estudio Gonzalez y Asociados</a>
+    <div class="menu-row">
+      <nav><ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="areas.html">Áreas de práctica</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul></nav>
+      <a class="nav-cta" href="#calendario">Agendar consulta</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Contacto</span>
+    <h1>Agendá tu consulta gratuita</h1>
+    <p class="lead">Elegí un horario directo en el calendario, o escribinos por WhatsApp si preferís coordinar así.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;" id="calendario">
+  <div class="wrap">
+    <div class="card-white reveal" style="padding:0; overflow:hidden;">
+      <!-- Calendario conectado a: https://calendly.com/estudiojuridicogonzalez
+           Para cambiar días/horarios disponibles, entrá a calendly.com y ajustá tu evento. -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/estudiojuridicogonzalez?hide_gdpr_banner=1&background_color=fbfaf7&primary_color=2c4a52" style="min-width:280px; height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px;" id="form">
+  <div class="wrap sec-head reveal" style="margin-bottom:24px;">
+    <span class="sec-eyebrow">¿Preferís escribirnos primero?</span>
+    <h2 style="font-size:24px;">Contanos tu situación por mensaje</h2>
+  </div>
+  <div class="wrap contact-grid">
+    <div class="card-white reveal">
+      <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+        <div class="form-field"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" type="text" placeholder="Ej: María Fernández" required></div>
+        <div class="form-field"><label for="contacto-medio">WhatsApp o email</label><input id="contacto-medio" name="contacto" type="text" placeholder="Ej: +54 9 261 123-4567" required></div>
+        <div class="form-field">
+          <label>¿Sobre qué tema necesitás asesoramiento?</label>
+          <div class="chips-select">
+            <label><input type="radio" name="tema" value="Jubilación ordinaria" checked> Jubilación ordinaria</label>
+            <label><input type="radio" name="tema" value="Reajuste de haberes"> Reajuste de haberes</label>
+            <label><input type="radio" name="tema" value="Pensión"> Pensión</label>
+            <label><input type="radio" name="tema" value="Incapacidad"> Incapacidad</label>
+            <label><input type="radio" name="tema" value="Otro"> Otro</label>
+          </div>
+        </div>
+        <div class="form-field"><label for="mensaje">Contanos brevemente tu caso (opcional)</label><textarea id="mensaje" name="mensaje" placeholder="Ej: Me jubilé hace 5 años y creo que mi haber quedó desactualizado..."></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">💬 Enviar consulta</button>
+      </form>
+    </div>
+
+    <div class="reveal">
+      <div class="info-row"><div class="info-ic">📱</div><div><h3>WhatsApp</h3><p>+54 9 261 535-8230 — respuesta en el día</p></div></div>
+      <div class="info-row"><div class="info-ic">✉️</div><div><h3>Email</h3><p>gonzalezyasociadoslegales@gmail.com</p></div></div>
+      <div class="info-row"><div class="info-ic">📍</div><div><h3>Ubicación</h3><p>Consultas presenciales y online, según lo prefieras.</p></div></div>
+      <div class="info-row"><div class="info-ic">⏱️</div><div><h3>Horarios</h3><p>Lunes a viernes de 9 a 18hs. El asistente virtual agenda turnos las 24 horas.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <span class="sec-eyebrow">Preguntas frecuentes</span>
+      <h2>Dudas comunes antes de consultar</h2>
+    </div>
+    <div class="faq-list">
+      <details class="reveal"><summary>¿Cómo elijo el horario de mi consulta?</summary><p>Arriba tenés un calendario en vivo: elegís el día y horario que te queden cómodos, y el turno queda confirmado al instante — sin esperar a que te respondamos.</p></details>
+      <details class="reveal"><summary>¿La primera consulta tiene costo?</summary><p>No, la primera consulta es gratuita y sin compromiso. Ahí evaluamos tu caso y te explicamos los pasos a seguir.</p></details>
+      <details class="reveal"><summary>¿Puedo hacer la consulta por WhatsApp?</summary><p>Sí, podés agendar y realizar toda la consulta inicial por WhatsApp si lo preferís antes de una reunión presencial.</p></details>
+      <details class="reveal"><summary>¿Cuánto tarda un trámite de jubilación?</summary><p>Depende del organismo y la documentación disponible. En la consulta te damos un plazo estimado según tu situación puntual.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="brand">Estudio Gonzalez y Asociados</div><p>Estudio jurídico especializado en Derecho Previsional.</p><p>Matrícula N.º 12727 — Colegio de Abogados de Mendoza</p></div>
+      <div><h3>Contacto</h3><ul><li><a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener">📱 WhatsApp: +54 9 261 535-8230</a></li><li><a href="mailto:gonzalezyasociadoslegales@gmail.com">✉️ gonzalezyasociadoslegales@gmail.com</a></li></ul></div>
+      <div><h3>Navegación</h3><ul><li><a href="areas.html">Áreas de práctica</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Estudio Gonzalez y Asociados.</span><span>Sitio en construcción</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">📲</a>
+<script>
+const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show'); io.unobserve(e.target);}});}, {threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

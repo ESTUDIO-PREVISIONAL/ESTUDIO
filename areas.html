@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Áreas de práctica — Estudio Gonzalez y Asociados | Mendoza</title>
+<meta name="description" content="Jubilación ordinaria, reajuste de haberes, pensión por fallecimiento, incapacidad laboral y reclamos administrativos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="navbar wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>Estudio Gonzalez y Asociados</a>
+    <div class="menu-row">
+      <nav><ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="areas.html" aria-current="page">Áreas de práctica</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul></nav>
+      <a class="nav-cta" href="contacto.html#calendario">Agendar consulta</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Áreas de práctica</span>
+    <h1>Especializados en Derecho Previsional</h1>
+    <p class="lead">Además de previsional, atendemos consultas puntuales en otras áreas. Elegí tu situación para conocer los próximos pasos.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="areas-grid">
+      <a href="previsional.html#jubilacion" class="area-card reveal"><div class="area-ic">👴</div><h3>Jubilación ordinaria</h3><p>Iniciación del trámite, cálculo de haberes, años de aporte y prueba de servicios.</p><span class="area-link">Conocer más →</span></a>
+      <a href="previsional.html#reajuste" class="area-card reveal"><div class="area-ic">📈</div><h3>Reajuste de haberes</h3><p>Reclamos por movilidad jubilatoria y actualización del haber previsional.</p><span class="area-link">Conocer más →</span></a>
+      <a href="previsional.html#pension" class="area-card reveal"><div class="area-ic">🕊️</div><h3>Pensión por fallecimiento</h3><p>Gestión de pensión para cónyuges, convivientes e hijos menores o con discapacidad.</p><span class="area-link">Conocer más →</span></a>
+      <a href="previsional.html#incapacidad" class="area-card reveal"><div class="area-ic">🩺</div><h3>Incapacidad laboral</h3><p>Retiro por invalidez y reclamos ante rechazos de la ANSES o similar.</p><span class="area-link">Conocer más →</span></a>
+      <a href="previsional.html#reclamos" class="area-card reveal"><div class="area-ic">📋</div><h3>Reclamos administrativos</h3><p>Impugnaciones, recursos jerárquicos y seguimiento de expedientes.</p><span class="area-link">Conocer más →</span></a>
+      <a href="contacto.html" class="area-card reveal"><div class="area-ic">💬</div><h3>Otras consultas</h3><p>Civil, laboral y familia. Contanos tu caso y te orientamos sin compromiso.</p><span class="area-link">Consultar →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <span class="sec-eyebrow">¿No sabés por dónde empezar?</span>
+      <h2>Contanos tu situación</h2>
+      <p>El asistente virtual te ayuda a identificar qué trámite corresponde a tu caso, en menos de 2 minutos.</p>
+    </div>
+    <div style="text-align:center;"><a href="contacto.html" class="btn-primary">💬 Hablar con el asistente</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="brand">Estudio Gonzalez y Asociados</div><p>Estudio jurídico especializado en Derecho Previsional.</p><p>Matrícula N.º 12727 — Colegio de Abogados de Mendoza</p></div>
+      <div><h3>Contacto</h3><ul><li><a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener">📱 WhatsApp: +54 9 261 535-8230</a></li><li><a href="mailto:gonzalezyasociadoslegales@gmail.com">✉️ gonzalezyasociadoslegales@gmail.com</a></li><li><a href="#">📍 Ciudad de Mendoza, Mendoza</a></li></ul></div>
+      <div><h3>Navegación</h3><ul><li><a href="blog.html">Blog</a></li><li><a href="sobre-mi.html">Sobre mí</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Estudio Gonzalez y Asociados.</span><span>Sitio en construcción</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">📲</a>
+<script>
+const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show'); io.unobserve(e.target);}});}, {threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
