@@ -17,6 +17,7 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="areas.html">Áreas de práctica</a></li>
         <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="casos-resueltos.html">Casos resueltos</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contacto.html" aria-current="page">Contacto</a></li>
       </ul></nav>
@@ -128,6 +129,18 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
       status.style.display = 'block';
     });
 });
+
+// Si venimos del asistente de la home, prellenamos nombre y tema
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const nombre = params.get('nombre');
+  const tema = params.get('tema');
+  if(nombre){ document.getElementById('nombre').value = nombre; }
+  if(tema){
+    const radio = document.querySelector('input[name="tema"][value="' + CSS.escape(tema) + '"]');
+    if(radio) radio.checked = true;
+  }
+})();
 </script>
 </body>
 </html>

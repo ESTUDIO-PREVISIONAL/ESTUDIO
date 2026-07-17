@@ -25,7 +25,8 @@
   .bubble:nth-child(1){animation-delay:.1s;} .bubble:nth-child(2){animation-delay:.4s;} .bubble:nth-child(3){animation-delay:.7s;}
   @keyframes rise{to{opacity:1; transform:translateY(0);}}
   .topic-chips{display:flex; flex-wrap:wrap; gap:8px; align-self:flex-start; max-width:88%; opacity:0; animation:rise .5s ease forwards; animation-delay:1.5s;}
-  .chip{background:var(--white); border:1.5px solid var(--sage); color:var(--teal-700); padding:8px 14px; border-radius:100px; font-size:14px; font-weight:600;}
+  .chip{background:var(--white); border:1.5px solid var(--sage); color:var(--teal-700); padding:8px 14px; border-radius:100px; font-size:14px; font-weight:600; font-family:inherit; cursor:pointer; transition:background .15s ease, transform .1s ease;}
+  .chip:hover{background:var(--sage-light); transform:translateY(-1px);}
   .chip.selected{background:var(--gold); border-color:var(--gold); color:var(--teal-900);}
   .chat-foot{padding:16px 22px; border-top:1px solid var(--line); display:flex; gap:10px; background:var(--white);}
   .chat-foot input{flex:1; border:1px solid var(--line); border-radius:100px; padding:12px 18px; font-family:inherit; font-size:15px; background:var(--sand);}
@@ -35,6 +36,7 @@
   .step{padding:0 26px;} .step:first-child{padding-left:0;} .step:last-child{padding-right:0;}
   .step-num{font-family:'Manrope'; font-weight:800; font-size:15px; color:var(--gold-dark); background:var(--sage-light); width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:18px;}
   .step p{font-size:15.5px; color:#55655f; margin-top:8px;}
+  .case-result{background:var(--sage-light); border-left:4px solid var(--sage); padding:20px 24px; border-radius:12px; font-size:15.5px; color:#33454a;}
 </style>
 </head>
 <body>
@@ -47,6 +49,7 @@
         <li><a href="index.html" aria-current="page">Inicio</a></li>
         <li><a href="areas.html">Áreas de práctica</a></li>
         <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="casos-resueltos.html">Casos resueltos</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul></nav>
@@ -58,7 +61,7 @@
 <section class="page-hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Asistente con IA disponible ahora</span>
+      <span class="eyebrow">Asistente virtual disponible ahora</span>
       <h1>Su jubilación, defendida por quien entiende <span>de números y de personas.</span></h1>
       <p class="lead">Especialistas en Derecho Previsional: jubilaciones, reajustes, pensiones e incapacidad. Agende su consulta en menos de 2 minutos, sin llamadas ni esperas.</p>
       <div class="btn-row">
@@ -67,27 +70,77 @@
       </div>
     </div>
 
-    <div class="chat-card" aria-hidden="true">
+    <div class="chat-card" id="assistant-card">
       <div class="chat-head">
-        <div class="chat-avatar">IA</div>
+        <div class="chat-avatar">👋</div>
         <div><div class="name">Asistente del Estudio</div><div class="status">En línea</div></div>
       </div>
-      <div class="chat-body">
-        <div class="bubble bot">¡Hola! Soy el asistente virtual. ¿Cuál es tu nombre y apellido?</div>
-        <div class="bubble user">María Fernández</div>
-        <div class="bubble bot">¿Sobre qué tema necesitás asesoramiento?</div>
-        <div class="topic-chips">
-          <span class="chip selected">Jubilación ordinaria</span>
-          <span class="chip">Reajuste de haberes</span>
-          <span class="chip">Pensión</span>
-          <span class="chip">Incapacidad</span>
-        </div>
+      <div class="chat-body" id="assistant-body">
+        <div class="bubble bot">¡Hola! Soy el asistente del estudio. ¿Cuál es tu nombre?</div>
       </div>
-      <div class="chat-foot"><input type="text" placeholder="Escribí tu mensaje..." disabled><button aria-label="Enviar">➤</button></div>
+      <form id="assistant-name-form" class="chat-foot">
+        <input type="text" id="assistant-name-input" placeholder="Escribí tu nombre..." autocomplete="off" required>
+        <button type="submit" aria-label="Enviar">➤</button>
+      </form>
     </div>
   </div>
 </section>
 
+<script>
+(function(){
+  const body = document.getElementById('assistant-body');
+  const form = document.getElementById('assistant-name-form');
+  const input = document.getElementById('assistant-name-input');
+  const topics = ["Jubilación ordinaria", "Reajuste de haberes", "Pensión", "Incapacidad", "Otro"];
+
+  function addBubble(text, who){
+    const div = document.createElement('div');
+    div.className = 'bubble ' + who;
+    div.textContent = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = input.value.trim();
+    if(!name) return;
+    addBubble(name, 'user');
+    form.remove();
+
+    setTimeout(function(){
+      addBubble('Un gusto, ' + name.split(' ')[0] + '. ¿Sobre qué tema necesitás asesoramiento?', 'bot');
+      const chips = document.createElement('div');
+      chips.className = 'topic-chips';
+      chips.style.opacity = '1';
+      topics.forEach(function(topic){
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'chip';
+        btn.textContent = topic;
+        btn.addEventListener('click', function(){
+          addBubble(topic, 'user');
+          chips.remove();
+          setTimeout(function(){
+            addBubble('¡Perfecto! Ya podés elegir el horario que más te convenga.', 'bot');
+            const link = document.createElement('a');
+            link.href = 'contacto.html?nombre=' + encodeURIComponent(name) + '&tema=' + encodeURIComponent(topic) + '#calendario';
+            link.className = 'btn-primary';
+            link.style.marginTop = '4px';
+            link.style.alignSelf = 'flex-start';
+            link.textContent = '📅 Ver turnos disponibles';
+            body.appendChild(link);
+            body.scrollTop = body.scrollHeight;
+          }, 500);
+        });
+        chips.appendChild(btn);
+      });
+      body.appendChild(chips);
+      body.scrollTop = body.scrollHeight;
+    }, 500);
+  });
+})();
+</script>
 <div class="trust">
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
     <div class="trust-item"><span class="ic">⚖️</span> Matrícula habilitada</div>
@@ -116,6 +169,20 @@
 </section>
 
 <section style="background:var(--white);">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="sec-eyebrow">Casos resueltos</span>
+      <h2 style="margin-bottom:16px;">Resultados que respaldan el trabajo</h2>
+      <p style="color:#4a5a5e; font-size:17px; margin-bottom:22px;">En 2025 se obtuvo una sentencia favorable en un caso de enfermedad profesional, logrando la indemnización del trabajador y la reparación del daño moral sufrido — sin nombres, por secreto profesional.</p>
+      <a href="casos-resueltos.html" class="btn-secondary">Ver casos resueltos →</a>
+    </div>
+    <div class="case-result reveal" style="margin-top:0;">
+      <strong>Sentencia 2025</strong> — Cámara del Trabajo, Mendoza. Se logró la condena de la ART por incapacidad laboral y del empleador por daño moral, tras años de litigio.
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white); padding-top:0;">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-eyebrow">Así de simple</span>
