@@ -51,7 +51,7 @@
   </div>
   <div class="wrap contact-grid">
     <div class="card-white reveal">
-      <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+      <form id="contact-form" action="PEGAR_ACA_LA_URL_DEL_APPS_SCRIPT" onsubmit="return false;">
         <div class="form-field"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" type="text" placeholder="Ej: María Fernández" required></div>
         <div class="form-field"><label for="contacto-medio">WhatsApp o email</label><input id="contacto-medio" name="contacto" type="text" placeholder="Ej: +54 9 261 123-4567" required></div>
         <div class="form-field">
@@ -67,6 +67,7 @@
         <div class="form-field"><label for="mensaje">Contanos brevemente tu caso (opcional)</label><textarea id="mensaje" name="mensaje" placeholder="Ej: Me jubilé hace 5 años y creo que mi haber quedó desactualizado..."></textarea></div>
         <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">💬 Enviar consulta</button>
       </form>
+      <p id="form-status" style="display:none; margin-top:16px; font-weight:600; font-size:15.5px;"></p>
     </div>
 
     <div class="reveal">
@@ -107,6 +108,26 @@
 <script>
 const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show'); io.unobserve(e.target);}});}, {threshold:0.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+  const status = document.getElementById('form-status');
+  const data = new FormData(form);
+
+  fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' })
+    .then(function(){
+      status.textContent = '¡Gracias! Recibimos tu consulta, te vamos a contactar a la brevedad.';
+      status.style.color = '#2C4A52';
+      status.style.display = 'block';
+      form.reset();
+    })
+    .catch(function(){
+      status.textContent = 'Hubo un problema al enviar. Probá de nuevo o escribinos directo por WhatsApp.';
+      status.style.color = '#B23B3B';
+      status.style.display = 'block';
+    });
+});
 </script>
 </body>
 </html>

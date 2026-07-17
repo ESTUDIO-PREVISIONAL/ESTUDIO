@@ -47,20 +47,22 @@ Solo falta que entres a [calendly.com](https://calendly.com) y confirmes:
 
 Si más adelante creás un evento con otro nombre o cambiás de link, hay que actualizar la línea `data-url` dentro de `contacto.html`.
 
-## Activar el formulario de contacto
+## Base de datos de consultas (Google Sheets) — así se analizan después
 
-El formulario de `contacto.html` está preparado para funcionar con **Formspree** (gratis, sin necesidad de programar backend):
+El formulario de `contacto.html` está preparado para guardar cada consulta como una fila en una **Google Sheet** (gratis, sin límite de cantidad, ideal para filtrar y analizar después). El archivo `google-apps-script.gs` tiene el código y las instrucciones detalladas, paso a paso, para conectarlo:
 
-1. Entrá a [formspree.io](https://formspree.io) y creá una cuenta gratuita con tu email (`gonzalezyasociadoslegales@gmail.com`).
-2. Creá un nuevo formulario ("New Form").
-3. Formspree te va a dar una URL parecida a `https://formspree.io/f/abc12345`.
-4. Abrí `contacto.html`, buscá esta línea cerca del principio del formulario:
+1. Creá una Google Sheet nueva con las columnas: `Fecha | Nombre | Contacto | Tema | Mensaje`
+2. Extensiones → Apps Script, pegá el contenido de `google-apps-script.gs`
+3. Implementar → Nueva implementación → Aplicación web → "Cualquier usuario" con acceso
+4. Copiá la URL que termina en `/exec`
+5. Pegala en `contacto.html`, en esta línea:
    ```html
-   <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+   <form id="contact-form" action="PEGAR_ACA_LA_URL_DEL_APPS_SCRIPT" onsubmit="return false;">
    ```
-5. Reemplazá `TU_ID_DE_FORMSPREE` por el ID que te dio Formspree y volvé a subir el archivo a GitHub.
 
-A partir de ahí, cada vez que alguien complete el formulario, el mensaje te va a llegar directo a tu email.
+Con esto activado: cada consulta queda como fila en tu planilla (para filtrar por tema, contar consultas por mes, etc.) **y** además te llega un email de notificación al instante — todo gratis y sin límite mensual.
+
+> ¿Por qué no usamos Formspree para esto? Formspree gratis solo guarda 50 consultas por mes, las borra a los 30 días, y exportarlas a CSV es una función paga. Para tener una base de datos acumulable y analizable sin pagar, Google Sheets es la opción más simple.
 
 ---
 
