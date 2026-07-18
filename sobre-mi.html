@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sobre Liliana Gonzalez — Abogada Previsional en Mendoza</title>
+<link rel="icon" type="image/png" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .about-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:50px; align-items:start;}
+  .about-grid{display:grid; grid-template-columns:0.45fr 1.55fr; gap:40px; align-items:start;}
   @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
-  .photo-real{border-radius:var(--radius); aspect-ratio:4/5; object-fit:cover; width:100%; box-shadow:0 20px 44px rgba(30,46,51,0.14);}
+  .photo-real{border-radius:var(--radius); aspect-ratio:4/5; object-fit:cover; width:100%; max-width:220px; box-shadow:0 14px 30px rgba(15,51,73,0.14);}
+  @media (max-width:860px){ .photo-real{max-width:160px; margin:0 auto;} }
   .value-list{display:grid; gap:18px; margin-top:16px;}
   .value-item{display:flex; gap:16px; align-items:flex-start;}
   .value-ic{width:44px; height:44px; border-radius:12px; background:var(--sage-light); display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;}
@@ -19,7 +21,7 @@
 <body>
 <header>
   <div class="navbar wrap">
-    <a href="index.html" class="brand"><span class="dot"></span>Estudio Gonzalez y Asociados</a>
+    <a href="index.html" class="brand"><img src="img/logo.png" alt="Logo Estudio Gonzalez y Asociados" class="brand-logo">Gonzalez y Asociados</a>
     <div class="menu-row">
       <nav><ul>
         <li><a href="index.html">Inicio</a></li>
@@ -47,7 +49,8 @@
   <div class="wrap about-grid">
     <img class="photo-real reveal" src="img/liliana-gonzalez.jpeg" alt="Liliana Gonzalez, abogada y Licenciada en Gestión de Empresas, Mendoza">
     <div class="reveal">
-      <p style="font-size:18px; color:#33454a; margin-bottom:20px;">Soy Liliana Gonzalez, abogada matriculada en el Colegio de Abogados de Mendoza (Matrícula Provincial y Federal) y Licenciada en Gestión de Empresas, al frente de Estudio Gonzalez y Asociados. Decidí enfocar mi estudio en Derecho Previsional porque veo, todos los días, cuánta gente no reclama lo que le corresponde simplemente por no saber que puede hacerlo.</p>
+      <p style="font-size:18px; color:#33454a; margin-bottom:20px;">Soy Liliana Gonzalez, con Matrícula Provincial y Federal, al frente de Estudio Gonzalez y Asociados. La matrícula federal me habilita a representar casos en todo el territorio de la República Argentina — algo especialmente relevante en Derecho Previsional, ya que ANSES y los organismos de seguridad social son de alcance nacional, sin importar en qué provincia vivas.</p>
+      <p style="font-size:18px; color:#33454a; margin-bottom:20px;">Además soy Licenciada en Gestión de Empresas. Decidí enfocar mi estudio en Derecho Previsional porque veo, todos los días, cuánta gente no reclama lo que le corresponde simplemente por no saber que puede hacerlo.</p>
       <p style="font-size:18px; color:#33454a; margin-bottom:20px;">Mi formación en Gestión de Empresas complementa el trabajo legal con una mirada organizada y prolija de cada trámite: cálculos claros, plazos bien seguidos y expedientes ordenados de principio a fin.</p>
       <p style="font-size:18px; color:#33454a; margin-bottom:20px;">Aunque el estudio recién está empezando en esta especialidad en Mendoza, eso significa que cada consulta recibe atención personalizada — no sos un expediente más entre cientos.</p>
 
