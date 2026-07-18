@@ -1,14 +1,14 @@
 :root{
-  --teal-900:#1E2E33;
-  --teal-700:#2C4A52;
-  --teal-600:#3B5F68;
-  --sage:#8FA998;
-  --sage-light:#E4EBE4;
+  --teal-900:#0A2536;
+  --teal-700:#0F3349;
+  --teal-600:#1C4A66;
+  --sage:#A3ABAE;
+  --sage-light:#EDF1F2;
   --sand:#F7F5F0;
-  --gold:#D9A441;
-  --gold-dark:#B8862E;
+  --gold:#7FBEE0;
+  --gold-dark:#4A8FB8;
   --white:#FFFFFF;
-  --line: rgba(30,46,51,0.10);
+  --line: rgba(15,51,73,0.12);
   --radius: 18px;
 }
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -28,16 +28,29 @@ img{max-width:100%; display:block;}
 :focus-visible{outline:3px solid var(--gold-dark); outline-offset:3px; border-radius:6px;}
 
 /* HEADER */
-header{position:sticky; top:0; z-index:50; background:rgba(247,245,240,0.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
-.navbar{display:flex; align-items:center; justify-content:space-between; padding:18px 32px;}
-.brand{font-weight:800; font-size:22px; color:var(--teal-700); letter-spacing:-0.02em; display:flex; align-items:center; gap:10px; text-decoration:none;}
-.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);}
+header{position:sticky; top:0; z-index:50; background:rgba(247,245,240,0.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); overflow-x:hidden;}
+.navbar{display:flex; align-items:center; justify-content:space-between; padding:16px 20px; gap:12px;}
+.brand{font-weight:800; font-size:19px; color:var(--teal-700); letter-spacing:-0.02em; display:flex; align-items:center; gap:8px; text-decoration:none; white-space:nowrap; flex-shrink:1; min-width:0; overflow:hidden; text-overflow:ellipsis;}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--gold); flex-shrink:0;}
 nav ul{list-style:none; display:flex; gap:34px; font-weight:600; font-size:16px;}
 nav a{text-decoration:none; color:var(--teal-900); opacity:0.85; transition:opacity .2s;}
 nav a:hover, nav a[aria-current="page"]{opacity:1; color:var(--teal-700);}
-.nav-cta{background:var(--teal-700); color:var(--white); padding:12px 22px; border-radius:100px; font-weight:600; font-size:15px; text-decoration:none; white-space:nowrap; box-shadow:0 4px 14px rgba(44,74,82,0.25);}
-.menu-row{display:flex; align-items:center; gap:34px;}
-@media (max-width:880px){ nav{display:none;} }
+.nav-cta{background:var(--teal-700); color:var(--white); padding:11px 18px; border-radius:100px; font-weight:600; font-size:14.5px; text-decoration:none; white-space:nowrap; box-shadow:0 4px 14px rgba(15,51,73,0.25); flex-shrink:0;}
+.menu-row{display:flex; align-items:center; gap:24px;}
+.menu-toggle{display:none; background:none; border:1.5px solid var(--line); border-radius:10px; width:42px; height:42px; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; color:var(--teal-700);}
+.menu-toggle svg{width:20px; height:20px;}
+
+@media (max-width:880px){
+  nav{position:fixed; top:73px; left:0; right:0; background:var(--white); border-bottom:1px solid var(--line); box-shadow:0 12px 24px rgba(15,51,73,0.08); max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  nav.open{max-height:400px;}
+  nav ul{flex-direction:column; gap:0; padding:8px 20px 18px;}
+  nav li{border-top:1px solid var(--line);}
+  nav a{display:block; padding:14px 4px;}
+  .menu-toggle{display:flex;}
+  .menu-row .nav-cta{display:none;}
+  .navbar{flex-wrap:nowrap;}
+}
+body{overflow-x:hidden;}
 
 .page-hero{padding:56px 0 44px;}
 .eyebrow{display:inline-flex; align-items:center; gap:8px; background:var(--sage-light); color:var(--teal-700); padding:8px 16px; border-radius:100px; font-weight:600; font-size:14px; margin-bottom:20px;}
@@ -53,6 +66,21 @@ h1{font-size:42px; line-height:1.16; letter-spacing:-0.02em; font-weight:800; co
 .btn-secondary:hover{border-color:var(--teal-700); transform:translateY(-2px);}
 
 section{padding:70px 0;}
+
+/* Zonas con significado fijo en todo el sitio:
+   .zone-action (navy) = agendar, contactar, decidir
+   .zone-info (crema/blanco) = leer, informarse, explorar
+   El borde superior marca visualmente dónde termina un bloque y empieza el otro. */
+.zone-action{background:var(--teal-700); color:var(--white); border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08);}
+.zone-action h2, .zone-action h1{color:var(--white);}
+.zone-action .sec-head p, .zone-action p.lead{color:rgba(255,255,255,0.78);}
+.zone-action .sec-eyebrow{color:var(--gold);}
+.zone-action .eyebrow{background:rgba(255,255,255,0.12); color:var(--white);}
+.zone-action .btn-secondary{background:transparent; color:var(--white); border-color:rgba(255,255,255,0.35);}
+.zone-action .btn-secondary:hover{border-color:var(--white);}
+
+.zone-info{background:var(--sand); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+.zone-info-white{background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 .sec-head{max-width:640px; margin-bottom:44px;}
 .sec-eyebrow{color:var(--gold-dark); font-weight:700; font-size:14px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:12px; display:block;}
 h2{font-size:32px; font-weight:800; letter-spacing:-0.02em; margin-bottom:14px; color:var(--teal-900);}

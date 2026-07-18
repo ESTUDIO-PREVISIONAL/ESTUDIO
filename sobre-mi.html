@@ -23,13 +23,15 @@
     <div class="menu-row">
       <nav><ul>
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="areas.html">Áreas de práctica</a></li>
+        <li><a href="areas.html">Especialidades</a></li>
         <li><a href="sobre-mi.html" aria-current="page">Sobre mí</a></li>
-        <li><a href="casos-resueltos.html">Casos resueltos</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul></nav>
-      <a class="nav-cta" href="contacto.html#calendario">Agendar consulta</a>
+      <a class="nav-cta" href="contacto.html#calendario">Consulta</a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </div>
 </header>
@@ -62,8 +64,8 @@
 <section class="faq">
   <div class="wrap" style="text-align:center;">
     <h2>¿Charlamos sobre tu situación?</h2>
-    <p style="color:#4a5a5e; margin-bottom:28px;">La primera consulta es gratuita y sin compromiso.</p>
-    <a href="contacto.html#calendario" class="btn-primary">💬 Agendar consulta gratuita</a>
+    <p style="color:#4a5a5e; margin-bottom:28px;">La primera consulta no tiene costo.</p>
+    <a href="contacto.html#calendario" class="btn-primary">💬 Consulta</a>
   </div>
 </section>
 
@@ -71,16 +73,14 @@
   <div class="wrap">
     <div class="foot-grid">
       <div><div class="brand">Estudio Gonzalez y Asociados</div><p>Estudio jurídico especializado en Derecho Previsional.</p><p>Matrícula N.º 12727 — Colegio de Abogados de Mendoza</p></div>
-      <div><h3>Contacto</h3><ul><li><a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener">📱 WhatsApp: +54 9 261 535-8230</a></li><li><a href="mailto:gonzalezyasociadoslegales@gmail.com">✉️ gonzalezyasociadoslegales@gmail.com</a></li></ul></div>
+      <div><h3>Contacto</h3><ul><li><a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener">📱 WhatsApp: +54 9 261 535-8230</a></li><li><a href="mailto:gonzalezyasociadoslegales@gmail.com">✉️ gonzalezyasociadoslegales@gmail.com</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Espejo+333+Ciudad+de+Mendoza" target="_blank" rel="noopener">📍 Espejo 333, Ciudad de Mendoza</a></li></ul></div>
       <div><h3>Navegación</h3><ul><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
     </div>
     <div class="foot-bottom"><span>© 2026 Estudio Gonzalez y Asociados.</span><span>Sitio en construcción</span></div>
   </div>
 </footer>
 <a href="https://wa.me/5492615358230?text=Hola%2C%20quiero%20hacer%20una%20consulta%20previsional" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">📲</a>
-<script>
-const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show'); io.unobserve(e.target);}});}, {threshold:0.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+<script src="script.js"></script>
 </body>
 </html>
